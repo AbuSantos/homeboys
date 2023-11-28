@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import NavbarLink from './NavbarLink'
-import logo from '../public/images/logo'
+import logo from '@/public/logo.svg'
 const links = [
   {
     label: 'Home',
@@ -19,17 +19,17 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between p-4">
-      <div className=" space-x-6 ">
+    <div className="flex justify-around p-4 pl-8 pr-8 ml-10">
+      <div className=" space-x-6 flex-1">
         {links.map((link, index) => {
           return <NavbarLink key={index} link={link} />
         })}
       </div>
-      <div>
-        <Image src={logo} />
+      <div className="flex-1 mr-36">
+        <Image src={logo} width={160} height={160} alt="logo" />
       </div>
-      <div>
-        <button>Book Now</button>
+      <div className="">
+        <button className="text-black">Book Now</button>
       </div>
     </div>
   )

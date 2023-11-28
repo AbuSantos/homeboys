@@ -21,3 +21,20 @@
   transform: scaleX(0);
   transform-origin: bottom left;
 }
+
+.divider {
+  background: linear-gradient(to right, #ffffff 50%, #f8f9f1 50%);
+}
+
+.text-color {
+  color: #4ca78e;
+}
+.bg-color {
+  background-color: #4ca78e;
+}
+.vertical-line {
+  border-right: 1.5px solid #000;
+  height: 70px;
+  padding: 10px;
+  margin-right: 10px;
+}

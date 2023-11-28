@@ -19,7 +19,7 @@ const NavbarLink = ({ link }) => {
     <Link
       href={link.link}
       className={clsx(
-        'stroke-gray-400 hover:text-green-300 transition duration-200 ease-in-out mb-4',
+        'text-black stroke-gray-400 hover:text-green-300 transition duration-200 ease-in-out mb-4',
         isActive && 'underline-on-click',
       )}
     >
