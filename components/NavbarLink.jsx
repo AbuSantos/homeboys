@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import '../styles/globall.css'
 
-const icons = { Settings, User, Grid, Calendar }
 
 const NavbarLink = ({ link }) => {
   const pathName = usePathname()
