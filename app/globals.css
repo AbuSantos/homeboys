@@ -20,5 +20,5 @@
 }
 
 .rotate-left {
-  /* transform: rotate(-6deg); */
+  transform: rotate(-6deg);
 }

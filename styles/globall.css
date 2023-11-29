@@ -35,8 +35,8 @@
 .vertical-line {
   border-right: 1.5px solid rgb(239, 234, 224);
   height: 70px;
-  padding: 10px;
-  margin-right: 10px;
+  /* padding: 10px; */
+  /* margin-right: 10px; */
 }
 .hu__hu__ {
   animation: hu__hu__ 2s ease-in-out;
@@ -44,5 +44,27 @@
 @keyframes hu__hu__ {
   50% {
     transform: translateY(20px);
+  }
+}
+.border-color {
+  border: 2px solid rgb(239, 234, 224);
+}
+
+.home-gallery {
+  width: 450px;
+  height: 550px;
+}
+
+@media (max-width: 640px) {
+  .home-gallery {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-gallery {
+    width: 300px;
+    height: 400px;
   }
 }

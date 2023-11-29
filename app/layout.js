@@ -23,10 +23,12 @@ export default function RootLayout({ children }) {
         <div className="w-screen  ">
           <NavBar />
           {children}
-          <div className="text-gray-100 text-2xl bottom-0 left-0 absolute bg-color h-10 w-full flex justify-end">
-            Massage
+          <div className="hidden md:inline-block">
+            <div className="text-gray-100 text-2xl bottom-0 left-0 absolute bg-color h-10 w-full flex justify-end">
+              Massage
+            </div>
+            <Footer />
           </div>
-          <Footer />
         </div>
       </body>
     </html>

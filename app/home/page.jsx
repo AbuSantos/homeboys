@@ -3,7 +3,7 @@ import HomeGallery from './HomeGallery'
 
 export const Home = () => {
   return (
-    <div className="text-black flex">
+    <div className="text-black md:flex sm:flex">
       <HeroPage />
       <HomeGallery />
     </div>
