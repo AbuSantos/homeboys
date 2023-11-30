@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { Settings, User, Grid, Calendar } from 'react-feather'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import '../styles/globall.css'
-
 
 const NavbarLink = ({ link }) => {
   const pathName = usePathname()

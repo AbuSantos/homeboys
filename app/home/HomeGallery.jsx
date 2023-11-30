@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import barb from '../../public/images/barb.jpg'
 import cut from '../../public/images/cut.jpg'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
+import { useRouter } from 'next/navigation'
 
 const images = [
   cut,
@@ -14,10 +16,13 @@ const images = [
 ]
 
 const HomeGallery = () => {
+  const router = useRouter()
+
   return (
     <div className="flex flex-col justify-center items-center md:mr-40 p-4 md:p-0">
       <div className="relative home-gallery">
         <button
+          onClick={() => router.push('/gallery')}
           style={{ borderRadius: '50%', lineHeight: '110%' }}
           className="absolute text-sm  text-gray-100 -left-10 top-56 flex items-center justify-start p-4 z-10 bg-black border-4 border-gray-100 h-20 w-20"
         >

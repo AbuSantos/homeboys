@@ -3,8 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useEffect, useState } from 'react'
-import '../../styles/globall.css'
-import { css } from '@emotion/react'
+import '../globall.css'
 import barb from '../../public/images/barb.jpg'
 import cut from '../../public/images/cut.jpg'
 import gal from '../../public/images/gal.jpg'
@@ -131,7 +130,7 @@ const Gallery = () => {
             return (
               <div className="box" key={index}>
                 <div className="imgBx">
-                  <img src={item.img.src} alt="" srcset="" />
+                  <img src={item.img.src} alt="this is an alt" srcset="" />
                 </div>
                 <div className="content">
                   <button onClick={() => handleImage(index)}>
