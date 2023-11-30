@@ -77,7 +77,7 @@ const colors = [
   'linear-gradient(180deg, rgba(255, 0, 212, 0.742), #000)',
 ]
 
-const Gallery = () => {
+const Contact = () => {
   const [selectImage, setSelectedImage] = useState(null)
   const [show, setShow] = useState(false)
 
@@ -197,4 +197,4 @@ const Gallery = () => {
   )
 }
 
-export default Gallery
+export default Contact

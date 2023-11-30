@@ -15,8 +15,8 @@ const links = [
     link: '/about',
   },
   {
-    label: 'Gallery',
-    link: '/gallery',
+    label: 'Contact Us',
+    link: '/contact',
   },
   {
     label: 'Gallerys',
