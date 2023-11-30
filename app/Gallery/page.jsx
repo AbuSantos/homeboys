@@ -78,7 +78,7 @@ const colors = [
   'linear-gradient(180deg, rgba(255, 0, 212, 0.742), #000)',
 ]
 
-const page = () => {
+const Gallery = () => {
   const [selectImage, setSelectedImage] = useState(null)
   const [show, setShow] = useState(false)
 
@@ -198,4 +198,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Gallery

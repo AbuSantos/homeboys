@@ -15,10 +15,6 @@ const links = [
     label: 'Services',
     link: '/services',
   },
-  {
-    label: 'About Us',
-    link: '/about',
-  },
 ]
 
 const Navbar = () => {
