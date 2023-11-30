@@ -140,6 +140,7 @@ div.gallery ul li {
   transition: 0.5s;
   mix-blend-mode: multiply;
 }
+
 .gallery-container .box:hover .imgBx:before {
   opacity: 1;
 }
@@ -175,4 +176,22 @@ div.gallery ul li {
 }
 .gallery-container .box:hover .content button {
   transform: translateY(0px);
+}
+
+.span-count {
+  color: #f7d9c8;
+}
+
+/* animation */
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

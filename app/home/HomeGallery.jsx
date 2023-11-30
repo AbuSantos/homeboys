@@ -2,7 +2,6 @@ import React from 'react'
 import ThreeImageStack from '@/components/ThreeImageStack'
 import barb from '@/public/images/barb.jpg'
 import cut from '@/public/images/cut.jpg'
-import Image from 'next/image'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
 
 const images = [
@@ -51,8 +50,9 @@ const HomeGallery = () => {
         >
           <FaArrowLeftLong />
         </button>
-        <p>
-          <span className="text-4xl font-bold">02</span>/{images.length}
+        <p className="span-count text-xl">
+          <span className="text-4xl font-bold text-black">02</span>/
+          {images.length}
         </p>
         <button
           style={{ borderRadius: '50%' }}

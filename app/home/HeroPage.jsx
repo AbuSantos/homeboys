@@ -28,21 +28,18 @@ const HeroPage = () => {
           facilities
         </p>
 
-        <button className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-12 mb-8">
+        <button className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-8 mb-8">
           Book Now
         </button>
 
-        <div className="flex md:p-4 space-x-6">
+        <div className="flex justify-center items-center md:p-4 space-x-6">
           <div className="vertical-line">
             <div className="flex justify-center mr-4">
               <span className="text-color">+</span>
               <p className="font-bold md:text-3xl text-xl">10</p>
             </div>
 
-            <small
-              className="mr-4 text-center text-xs md:text-base"
-              style={{ lineHeight: '80%' }}
-            >
+            <small className="mr-4 text-center text-xs md:text-base">
               Years of experience
             </small>
           </div>

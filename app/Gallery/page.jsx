@@ -3,31 +3,40 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useState } from 'react'
+import '../../styles/globall.css'
+import { css } from '@emotion/react'
+import barb from '../../public/images/barb.jpg'
+import cut from '../../public/images/cut.jpg'
+import gal from '../../public/images/gal.jpg'
+import hair from '../../public/images/hair.jpg'
+import gal1 from '../../public/images/gal1.jpg'
 
 const data = [
   {
-    img:
-      'https://images.unsplash.com/photo-1579748138140-ce9ef2c32db1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    img: barb,
     title: 'title',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
   },
   {
-    img:
-      'https://images.unsplash.com/photo-1579639782539-15cc6c0be63f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    img: cut,
     title: 'title',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   },
   {
-    img:
-      'https://images.unsplash.com/photo-1603984362497-0a878f607b92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80',
+    img: gal,
     title: 'title',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus molestias quidem iusto.',
   },
   {
-    img:
-      'https://images.unsplash.com/photo-1579748138140-ce9ef2c32db1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    img: hair,
+    title: 'title',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
+  },
+  {
+    img: gal1,
     title: 'title',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
@@ -61,11 +70,22 @@ const settings = {
   ],
 }
 
+const colors = [
+  'linear-gradient(180deg, rgb(0, 255, 17), #000)',
+  'linear-gradient(180deg, rgb(255, 81, 0), #000)',
+  'linear-gradient(180deg, rgba(251, 255, 0, 0.742), #000) ',
+  'linear-gradient(180deg, rgba(4, 0, 255, 0.742), #000) ',
+  'linear-gradient(180deg, rgba(255, 0, 212, 0.742), #000)',
+]
+
 const page = () => {
   const [selectImage, setSelectedImage] = useState(0)
   const handleimage = (index) => {
     setSelectedImage(index)
   }
+  const myStyle = css`
+    background-color: red;
+  `
 
   return (
     <div>
@@ -103,12 +123,12 @@ const page = () => {
         </div>
       </div>
       <div className=" md:hidden">
-        <Slider {...settings} className="gallery-container  w-screen">
+        <Slider {...settings} className="gallery-container  w-screen ">
           {data.map((item, index) => {
             return (
               <div className="box" key={index}>
                 <div className="imgBx">
-                  <img src={item.img} alt="" srcset="" />
+                  <img src={item.img.src} alt="" srcset="" />
                 </div>
                 <div className="content">
                   <button onClick={() => handleimage(index)}>
@@ -119,55 +139,50 @@ const page = () => {
             )
           })}
         </Slider>
-
-        <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto mt-10 rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-800 dark:text-gray-100">
-          <div className="flex flex-col justify-between">
-            <div className="space-y-2">
-              <h2 className="text-4xl font-bold leadi lg:text-5xl">
-                Let's talk!
-              </h2>
-              <div className="dark:text-gray-400">
-                Great choice !!, send us a message to proceed with your
-                appointment:
-              </div>
-            </div>
-            <img src={data[selectImage].img} alt="" className="p-6 h-44 " />
+        <div
+          style={{
+            backgroundImage: `url(${hair.src})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%',
+          }}
+          className={`${myStyle} grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto inset-0 mt-10 rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100 `}
+        >
+          <div className="flex flex-col justify-between ">
+            <img
+              src={data[selectImage].img.src}
+              alt=""
+              className="p-6 w-60 fadeIn "
+            />
           </div>
-          <form novalidate="" className="space-y-6">
+          <form novalidate="" className="space-y-2">
             <div>
-              <label for="name" className="text-sm">
-                Full name
-              </label>
               <input
                 id="name"
                 type="text"
-                placeholder=""
-                className="w-full p-3 rounded dark:bg-gray-800"
+                placeholder=" Full Name"
+                className="w-full p-3 rounded dark:bg-gray-800 "
               />
             </div>
             <div>
-              <label for="email" className="text-sm">
-                Email
-              </label>
               <input
                 id="email"
-                type="email"
                 className="w-full p-3 rounded dark:bg-gray-800"
+                placeholder="email/phone number"
               />
             </div>
             <div>
-              <label for="message" className="text-sm">
-                Message
-              </label>
               <textarea
                 id="message"
                 rows="3"
-                className="w-full p-3 rounded dark:bg-gray-800"
+                className="w-full p-3 rounded dark:bg-gray-800 text-gray-400"
+                placeholder="Message"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full p-3 text-sm font-bold tracki uppercase rounded dark:bg-violet-400 dark:text-gray-900"
+              className="w-full p-3 text-sm font-bold tracki uppercase rounded bg-color dark:text-gray-900"
             >
               Send Message
             </button>

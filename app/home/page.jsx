@@ -1,7 +1,7 @@
 import HeroPage from './HeroPage'
 import HomeGallery from './HomeGallery'
 
-export const Home = () => {
+export const HomePage = () => {
   return (
     <div className="text-black md:flex sm:flex">
       <HeroPage />
@@ -9,4 +9,4 @@ export const Home = () => {
     </div>
   )
 }
-export default Home
+export default HomePage
