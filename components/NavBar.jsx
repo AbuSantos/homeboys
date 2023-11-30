@@ -15,11 +15,11 @@ const links = [
     link: '/about',
   },
   {
-    label: 'Services',
-    link: '/services',
+    label: 'Gallery',
+    link: '/gallery',
   },
   {
-    label: 'Gallery',
+    label: 'Gallerys',
     link: '/gallery',
   },
 ]
