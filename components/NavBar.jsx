@@ -10,7 +10,7 @@ const links = [
     label: 'Home',
     link: '/',
   },
-  { label: 'Gallery', icon: 'User', link: '/gallery' },
+  { label: 'Gallery', link: '/gallery' },
   {
     label: 'Services',
     link: '/services',
@@ -23,19 +23,14 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center w-full h-20 px-8 text-white nav">
       <ul className="hidden md:flex flex-1">
-        {links.map(
-          (link, index) => (
-            console.log(link),
-            (
-              <li
-                key={index}
-                className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
-              >
-                <NavbarLink key={index} link={link} />
-              </li>
-            )
-          ),
-        )}
+        {links.map((link, index) => (
+          <li
+            key={index}
+            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
+          >
+            <NavbarLink key={index} link={link} />
+          </li>
+        ))}
       </ul>
       <div className=" flex-1 mr-24">
         <Image src={logo} width={160} height={160} alt="logo" />
