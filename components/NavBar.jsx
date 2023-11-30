@@ -10,7 +10,10 @@ const links = [
     label: 'Home',
     link: '/',
   },
-
+  {
+    label: 'About',
+    link: '/about',
+  },
   {
     label: 'Services',
     link: '/services',
