@@ -1,7 +1,6 @@
 import React from 'react'
-import ThreeImageStack from '@/components/ThreeImageStack'
-import barb from '@/public/images/barb.jpg'
-import cut from '@/public/images/cut.jpg'
+import barb from '../../public/images/barb.jpg'
+import cut from '../../public/images/cut.jpg'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
 
 const images = [

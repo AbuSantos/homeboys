@@ -1,5 +1,5 @@
-import HeroPage from './HeroPage'
-import HomeGallery from './HomeGallery'
+import HeroPage from "../app/home/HeroPage";
+import HomeGallery from "../app/home/HomeGallery";
 
 export const HomePage = () => {
   return (
@@ -7,6 +7,6 @@ export const HomePage = () => {
       <HeroPage />
       <HomeGallery />
     </div>
-  )
-}
-export default HomePage
+  );
+};
+export default HomePage;

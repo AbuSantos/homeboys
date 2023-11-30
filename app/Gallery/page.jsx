@@ -2,7 +2,7 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../../styles/globall.css'
 import { css } from '@emotion/react'
 import barb from '../../public/images/barb.jpg'
@@ -14,13 +14,13 @@ import gal1 from '../../public/images/gal1.jpg'
 const data = [
   {
     img: barb,
-    title: 'title',
+    title: 'fades',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
   },
   {
     img: cut,
-    title: 'title',
+    title: 'fade',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   },
   {
@@ -79,13 +79,16 @@ const colors = [
 ]
 
 const page = () => {
-  const [selectImage, setSelectedImage] = useState(0)
-  const handleimage = (index) => {
-    setSelectedImage(index)
+  const [selectImage, setSelectedImage] = useState(null)
+  const [show, setShow] = useState(false)
+
+  const handleImage = (index) => {
+    setShow(false)
+    setTimeout(() => {
+      setSelectedImage(index)
+      setShow(true)
+    }, 500)
   }
-  const myStyle = css`
-    background-color: red;
-  `
 
   return (
     <div>
@@ -122,7 +125,7 @@ const page = () => {
           </ul>
         </div>
       </div>
-      <div className=" md:hidden">
+      <div className="md:hidden">
         <Slider {...settings} className="gallery-container  w-screen ">
           {data.map((item, index) => {
             return (
@@ -131,7 +134,7 @@ const page = () => {
                   <img src={item.img.src} alt="" srcset="" />
                 </div>
                 <div className="content">
-                  <button onClick={() => handleimage(index)}>
+                  <button onClick={() => handleImage(index)}>
                     {item.title}
                   </button>
                 </div>
@@ -147,19 +150,22 @@ const page = () => {
             width: '100%',
             height: '100%',
           }}
-          className={`${myStyle} grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto inset-0 mt-10 rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100 `}
+          className={`inset-0 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto mt-10 rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100 `}
         >
-          <div className="flex flex-col justify-between ">
+          <div
+            className={`flex flex-col justify-between fadeIn ${
+              show ? 'visible' : 'hidden'
+            } `}
+          >
             <img
-              src={data[selectImage].img.src}
+              src={data[selectImage]?.img.src}
               alt=""
-              className="p-6 w-60 fadeIn "
+              className={`p-6 w-60 ${show ? 'visible' : 'hidden'} `}
             />
           </div>
           <form novalidate="" className="space-y-2">
             <div>
               <input
-                id="name"
                 type="text"
                 placeholder=" Full Name"
                 className="w-full p-3 rounded dark:bg-gray-800 "
@@ -167,7 +173,6 @@ const page = () => {
             </div>
             <div>
               <input
-                id="email"
                 className="w-full p-3 rounded dark:bg-gray-800"
                 placeholder="email/phone number"
               />
@@ -177,7 +182,7 @@ const page = () => {
                 id="message"
                 rows="3"
                 className="w-full p-3 rounded dark:bg-gray-800 text-gray-400"
-                placeholder="Message"
+                placeholder=" any special request?  "
               ></textarea>
             </div>
             <button

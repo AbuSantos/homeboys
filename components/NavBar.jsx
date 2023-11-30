@@ -8,7 +8,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 const links = [
   {
     label: 'Home',
-    link: '/home',
+    link: '/',
   },
   { label: 'Gallery', icon: 'User', link: '/gallery' },
   {
