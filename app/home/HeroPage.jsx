@@ -28,7 +28,7 @@ const HeroPage = () => {
           facilities
         </p>
 
-        <button className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-8 mb-8">
+        <button className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-4 mb-8">
           Book Now
         </button>
 

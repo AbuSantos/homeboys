@@ -2,6 +2,7 @@
 import React from 'react'
 import barb from '../../public/images/barb.jpg'
 import cut from '../../public/images/cut.jpg'
+import '../../styles/globall.css'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
 import { useRouter } from 'next/navigation'
 
