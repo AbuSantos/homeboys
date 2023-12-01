@@ -1,7 +1,12 @@
-import React from 'react'
+import HeroPage from "./home/HeroPage";
+import HomeGallery from "./home/HomeGallery";
 
-const Home = () => {
-  return <div>page</div>
-}
-
-export default Home
+export const HomePage = () => {
+  return (
+    <div className="text-black md:flex sm:flex">
+      <HeroPage />
+      <HomeGallery />
+    </div>
+  );
+};
+export default HomePage;

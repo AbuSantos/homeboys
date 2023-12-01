@@ -11,16 +11,8 @@ const links = [
     link: '/',
   },
   {
-    label: 'About',
-    link: '/about',
-  },
-  {
     label: 'Contact Us',
     link: '/contact',
-  },
-  {
-    label: 'Gallerys',
-    link: '/gallery',
   },
 ]
 
@@ -40,7 +32,9 @@ const Navbar = () => {
         ))}
       </ul>
       <div className=" flex-1 mr-24">
-        <Image src={logo} width={160} height={160} alt="logo" />
+        <Link href={links[0].link}>
+          <Image src={logo} width={160} height={160} alt="logo" />
+        </Link>
       </div>
       <div className="hidden md:inline-block ">
         <button className="text-black border-b-2 border-black">Book Now</button>

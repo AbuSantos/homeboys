@@ -6,15 +6,7 @@ import '../../styles/globall.css'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
 import { useRouter } from 'next/navigation'
 
-const images = [
-  cut,
-  barb,
-  // 'https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80',
-  // 'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-  // 'https://images.unsplash.com/photo-1524593166156-312f362cada0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-
-  // 'https://images.unsplash.com/photo-1506917728037-b6af01a7d403?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80',
-]
+const images = [cut, barb]
 
 const HomeGallery = () => {
   const router = useRouter()
@@ -23,7 +15,7 @@ const HomeGallery = () => {
     <div className="flex flex-col justify-center items-center md:mr-40 p-4 md:p-0">
       <div className="relative home-gallery">
         <button
-          onClick={() => router.push('/gallery')}
+          onClick={() => router.push('/contact')}
           style={{ borderRadius: '50%', lineHeight: '110%' }}
           className="absolute text-sm  text-gray-100 -left-10 top-56 flex items-center justify-start p-4 z-10 bg-black border-4 border-gray-100 h-20 w-20"
         >

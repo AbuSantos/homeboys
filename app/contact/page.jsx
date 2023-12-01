@@ -6,10 +6,15 @@ import { useEffect, useState } from 'react'
 import '../../styles/globall.css'
 import barb from '../../public/images/barb.jpg'
 import cut from '../../public/images/cut.jpg'
-import gal from '../../public/images/gal.jpg'
 import hair from '../../public/images/hair.jpg'
 import gal1 from '../../public/images/gal1.jpg'
+import { Poppins, Dancing_Script } from 'next/font/google'
 
+const satisfy = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 const data = [
   {
     img: barb,
@@ -22,12 +27,7 @@ const data = [
     title: 'fade',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
   },
-  {
-    img: gal,
-    title: 'title',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus molestias quidem iusto.',
-  },
+
   {
     img: hair,
     title: 'title',
@@ -94,53 +94,23 @@ const Contact = () => {
       <div className="mt-8 hidden md:inline-flex items-center justify-center  md">
         <div className="gallery mt-30 md:w-5/6 ">
           <ul className="list-none grid grid-cols-2 md:grid-cols-7 items-center">
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/9.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/2.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/3.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/1.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/4.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/5.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/7.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/8.png" />
-            </li>
-            <li>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/6.png" />
-            </li>
+            {data.map((item, index) => {
+              return (
+                <li>
+                  <img src={item.img.src} />
+                </li>
+              )
+            })}
           </ul>
         </div>
       </div>
       <div className="md:hidden">
-        <Slider {...settings} className="gallery-container  w-screen ">
-          {data.map((item, index) => {
-            return (
-              <div className="box" key={index}>
-                <div className="imgBx">
-                  <img src={item.img.src} alt="this is an alt" srcset="" />
-                </div>
-                <div className="content">
-                  <button onClick={() => handleImage(index)}>
-                    {item.title}
-                  </button>
-                </div>
-              </div>
-            )
-          })}
-        </Slider>
+        <h1
+          className={`${satisfy.className} md:text-4xl  md:text-left text-center text-xl  sm:w-9/12 leading-none `}
+        >
+          Please scroll down to select a hair Style
+        </h1>
+
         <div
           style={{
             backgroundImage: `url(${hair.src})`,
@@ -162,7 +132,7 @@ const Contact = () => {
               className={`p-6 w-60 ${show ? 'visible' : 'hidden'} `}
             />
           </div>
-          <form novalidate="" className="space-y-2">
+          <form noValidate="" className="space-y-2">
             <div>
               <input
                 type="text"
@@ -192,6 +162,22 @@ const Contact = () => {
             </button>
           </form>
         </div>
+        <Slider {...settings} className="gallery-container  w-screen ">
+          {data.map((item, index) => {
+            return (
+              <div className="box" key={index}>
+                <div className="imgBx">
+                  <img src={item.img.src} alt="this is an alt" srcset="" />
+                </div>
+                <div className="content">
+                  <button onClick={() => handleImage(index)}>
+                    {item.title}
+                  </button>
+                </div>
+              </div>
+            )
+          })}
+        </Slider>
       </div>
     </div>
   )
