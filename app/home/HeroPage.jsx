@@ -1,4 +1,7 @@
+'use client'
 import { Assistant, Poppins, Satisfy, Dancing_Script } from 'next/font/google'
+import { useRouter } from 'next/navigation'
+
 const poppins = Poppins({
   weight: '600',
   subsets: ['latin'],
@@ -10,6 +13,8 @@ const satisfy = Satisfy({
   display: 'swap',
 })
 const HeroPage = () => {
+  const router = useRouter()
+
   return (
     <div className="w-full">
       <div className=" mt-7 md:ml-10 p-4">
@@ -28,7 +33,10 @@ const HeroPage = () => {
           facilities
         </p>
 
-        <button className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-4 mb-8">
+        <button
+          onClick={() => router.push('/contact')}
+          className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-4 mb-8"
+        >
           Book Now
         </button>
 
