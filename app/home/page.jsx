@@ -1,5 +1,5 @@
-import HeroPage from "./home/HeroPage";
-import HomeGallery from "./home/HomeGallery";
+import HeroPage from "./HeroPage";
+import HomeGallery from "./HomeGallery";
 
 export const HomePage = () => {
   return (

@@ -93,6 +93,7 @@ const Contact = () => {
     setShow(false)
     setTimeout(() => {
       setSelectedImage(index)
+      setDetails((details.selectStyle = index))
       setShow(true)
     }, 500)
   }
@@ -209,7 +210,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full p-3 text-sm font-bold tracki uppercase rounded bg-color dark:text-gray-900"
+              className="w-full p-3 text-sm font-bold tracki uppercase rounded bg-color dark:text-gray-100"
             >
               Send Message
             </button>
@@ -222,7 +223,7 @@ const Contact = () => {
                 <div className="imgBx">
                   <img src={item.img.src} alt="this is an alt" srcset="" />
                 </div>
-                <div className="content">
+                <div className="content ">
                   <button onClick={() => handleImage(index)}>
                     {item.title}
                   </button>
