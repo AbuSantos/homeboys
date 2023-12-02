@@ -80,6 +80,14 @@ const colors = [
 const Contact = () => {
   const [selectImage, setSelectedImage] = useState(null)
   const [show, setShow] = useState(false)
+  const initial = {
+    name: '',
+    email: '',
+    message: '',
+    selectStyle: null,
+  }
+
+  const [details, setDetails] = useState({ ...initial })
 
   const handleImage = (index) => {
     setShow(false)
@@ -87,6 +95,17 @@ const Contact = () => {
       setSelectedImage(index)
       setShow(true)
     }, 500)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(details)
+    setDetails({
+      name: '',
+      email: '',
+      message: '',
+      selectStyle: null,
+    })
   }
 
   return (
@@ -132,9 +151,13 @@ const Contact = () => {
               className={`p-6 w-60 ${show ? 'visible' : 'hidden'} `}
             />
           </div>
-          <form noValidate="" className="space-y-2">
+          <form noValidate="" className="space-y-2" onSubmit={handleSubmit}>
             <div>
               <input
+                onChange={(e) =>
+                  setDetails((s) => ({ ...s, name: e.target.value }))
+                }
+                value={details.name}
                 type="text"
                 placeholder=" Full Name"
                 className="w-full p-3 rounded dark:bg-gray-800 "
@@ -142,12 +165,20 @@ const Contact = () => {
             </div>
             <div>
               <input
+                onChange={(e) =>
+                  setDetails((s) => ({ ...s, email: e.target.value }))
+                }
+                value={details.email}
                 className="w-full p-3 rounded dark:bg-gray-800"
                 placeholder="email/phone number"
               />
             </div>
             <div>
               <textarea
+                onChange={(e) => {
+                  setDetails({ ...details, message: e.target.value })
+                }}
+                value={details.message}
                 id="message"
                 rows="3"
                 className="w-full p-3 rounded dark:bg-gray-800 text-gray-400"
