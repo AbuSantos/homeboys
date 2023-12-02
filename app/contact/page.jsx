@@ -81,10 +81,10 @@ const Contact = () => {
   const [selectImage, setSelectedImage] = useState(null)
   const [show, setShow] = useState(false)
   const initial = {
-    name: '',
+    fullname: '',
     email: '',
     message: '',
-    selectStyle: null,
+    selectStyle: selectImage,
   }
 
   const [details, setDetails] = useState({ ...initial })
@@ -97,11 +97,33 @@ const Contact = () => {
     }, 500)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
+    try {
+      const res = await fetch('/api/submitForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(details),
+      })
+
+      const data = await res.json()
+      if (data.success) {
+        console.log('Form submitted successfully!')
+        // Add any additional logic or redirect after successful submission
+      } else {
+        console.error('Error submitting form.')
+        // Handle the error appropriately
+      }
+    } catch (error) {
+      console.error('Error submitting form.', error)
+    }
+
     console.log(details)
     setDetails({
-      name: '',
+      fullname: '',
       email: '',
       message: '',
       selectStyle: null,
@@ -155,9 +177,9 @@ const Contact = () => {
             <div>
               <input
                 onChange={(e) =>
-                  setDetails((s) => ({ ...s, name: e.target.value }))
+                  setDetails((s) => ({ ...s, fullname: e.target.value }))
                 }
-                value={details.name}
+                value={details.fullname}
                 type="text"
                 placeholder=" Full Name"
                 className="w-full p-3 rounded dark:bg-gray-800 "
@@ -176,7 +198,7 @@ const Contact = () => {
             <div>
               <textarea
                 onChange={(e) => {
-                  setDetails({ ...details, message: e.target.value })
+                  setDetails((s) => ({ ...s, message: e.target.value }))
                 }}
                 value={details.message}
                 id="message"
