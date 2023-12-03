@@ -9,6 +9,7 @@ import cut from '../../public/images/cut.jpg'
 import hair from '../../public/images/hair.jpg'
 import gal1 from '../../public/images/gal1.jpg'
 import { Poppins, Dancing_Script } from 'next/font/google'
+import Completed from '@/components/Completed'
 
 const satisfy = Poppins({
   weight: '400',
@@ -68,7 +69,6 @@ const settings = {
     },
   ],
 }
-
 const colors = [
   'linear-gradient(180deg, rgb(0, 255, 17), #000)',
   'linear-gradient(180deg, rgb(255, 81, 0), #000)',
@@ -80,6 +80,9 @@ const colors = [
 const Contact = () => {
   const [selectImage, setSelectedImage] = useState(null)
   const [show, setShow] = useState(false)
+  const [complete, setComplete] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
   const initial = {
     fullname: '',
     email: '',
@@ -97,7 +100,9 @@ const Contact = () => {
       setShow(true)
     }, 500)
   }
-
+  const handleShow = () => {
+    setShowModal(true)
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -112,6 +117,7 @@ const Contact = () => {
 
       const data = await res.json()
       if (data.success) {
+        setShowModal(true)
         console.log('Form submitted successfully!')
         // Add any additional logic or redirect after successful submission
       } else {
@@ -138,7 +144,7 @@ const Contact = () => {
           <ul className="list-none grid grid-cols-2 md:grid-cols-7 items-center">
             {data.map((item, index) => {
               return (
-                <li>
+                <li key={index}>
                   <img src={item.img.src} />
                 </li>
               )
@@ -152,7 +158,7 @@ const Contact = () => {
         >
           Please scroll down to select a hair Style
         </h1>
-
+        <button onClick={handleShow}>Show </button>
         <div
           style={{
             backgroundImage: `url(${hair.src})`,
@@ -174,6 +180,8 @@ const Contact = () => {
               className={`p-6 w-60 ${show ? 'visible' : 'hidden'} `}
             />
           </div>
+          {showModal && <Completed data={data} selectImage={selectImage} />}
+
           <form noValidate="" className="space-y-2" onSubmit={handleSubmit}>
             <div>
               <input

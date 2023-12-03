@@ -22,3 +22,24 @@
 .rotate-left {
   transform: rotate(-6deg);
 }
+
+.fadeIn {
+  animation: fadeIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hu__hu__ {
+  animation: hu__hu__ 2s ease-in-out;
+}
+@keyframes hu__hu__ {
+  50% {
+    transform: translateY(20px);
+  }
+}
