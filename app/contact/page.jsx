@@ -158,7 +158,6 @@ const Contact = () => {
         >
           Please scroll down to select a hair Style
         </h1>
-        <button onClick={handleShow}>Show </button>
         <div
           style={{
             backgroundImage: `url(${hair.src})`,
