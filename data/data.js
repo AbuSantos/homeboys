@@ -3,7 +3,7 @@ import cut from "@/public/images/cut.jpg";
 import hair from "@/public/images/hair.jpg";
 import gal1 from "@/public/images/gal1.jpg";
 import hb from "@/public/images/hb.jpg";
-`import hb1 from "@/public/images/hb1.jpg";
+import hb1 from "@/public/images/hb1.jpg";
 import hb3 from "@/public/images/hb3.jpg";
 import hb4 from "@/public/images/hb4.jpg";
 import hb5 from "@/public/images/hb5.jpg";
