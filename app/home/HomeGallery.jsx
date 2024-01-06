@@ -2,11 +2,14 @@
 import React from 'react'
 import barb from '../../public/images/barb.jpg'
 import cut from '../../public/images/cut.jpg'
+import gal1 from '../../public/images/gal1.jpg'
+import hair from '../../public/images/hair.jpg'
+import hb from '../../public/images/hb.jpg'
 import '../../styles/globall.css'
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6'
 import { useRouter } from 'next/navigation'
 
-const images = [cut, barb]
+const images = [cut, barb, gal1, hair]
 
 const HomeGallery = () => {
   const router = useRouter()

@@ -10,38 +10,13 @@ import hair from '../../public/images/hair.jpg'
 import gal1 from '../../public/images/gal1.jpg'
 import { Poppins, Dancing_Script } from 'next/font/google'
 import Completed from '@/components/Completed'
+import { data } from '@/data/data'
 
 const satisfy = Poppins({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 })
-const data = [
-  {
-    img: barb,
-    title: 'fades',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
-  },
-  {
-    img: cut,
-    title: 'fade',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-
-  {
-    img: hair,
-    title: 'title',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
-  },
-  {
-    img: gal1,
-    title: 'title',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodiaccusamus molestias quidem iusto',
-  },
-]
 
 const settings = {
   dots: true,
@@ -159,13 +134,6 @@ const Contact = () => {
           Please scroll down to select a hair Style
         </h1>
         <div
-          style={{
-            backgroundImage: `url(${hair.src})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            width: '100%',
-            height: '100%',
-          }}
           className={`inset-0 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto mt-10 rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100 `}
         >
           <div

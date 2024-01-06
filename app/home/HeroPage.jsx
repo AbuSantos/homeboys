@@ -1,6 +1,8 @@
 'use client'
 import { Assistant, Poppins, Satisfy, Dancing_Script } from 'next/font/google'
 import { useRouter } from 'next/navigation'
+import hblogo from '@/public/images/hblogor.png'
+import Image from 'next/image'
 
 const poppins = Poppins({
   weight: '600',
@@ -19,29 +21,32 @@ const HeroPage = () => {
     <div className="w-full">
       <div className=" mt-7 md:ml-10 p-4">
         <h1
-          className={`${poppins.className} md:text-8xl sm:text-4xl md:text-left text-center text-5xl  sm:w-9/12 leading-none `}
+          className={`${poppins.className} md:text-7xl sm:text-4xl md:text-left text-center text-4xl  sm:w-9/12 leading-none `}
         >
-          Find The best Barber Shop
+          Masterful Cuts, Exceptional Style
         </h1>
         <span className={`${satisfy.className} text-8xl text-color mb-4 `}>
           for you
         </span>
 
-        <p className={`md:p-4 text-center text-lg md:w-8/12 w-full mb-6`}>
+        <p className={`md:p-4 text-center text-lg md:w-8/12 w-full mb-6 `}>
           Haircut services for men and women. Here, the customers hair,
           scalp,Face and Body can be pampered with the best services and
-          facilities
+          facilities.
+          <span className={`${satisfy.className} text-color  `}>
+            cheat on your barber with us
+          </span>
         </p>
 
         <button
           onClick={() => router.push('/contact')}
-          className="w-48 md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-4 mb-8"
+          className="w-48  md:ml-52 ml-12 font-semibold text-xl p-4 bg-color text-gray-100 mt-4 mb-8"
         >
           Book Now
         </button>
 
         <div className="flex justify-center items-center md:p-4 space-x-6">
-          <div className="vertical-line">
+          <div className="vertical-line ">
             <div className="flex justify-center mr-4">
               <span className="text-color">+</span>
               <p className="font-bold md:text-3xl text-xl">10</p>
